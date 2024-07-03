@@ -1,0 +1,41 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+  workflow_dispatch:
+name: Test
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        go-version: [1.20.x]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: ${{ matrix.go-version }}
+    - if: matrix.os == 'windows-latest'
+      run: |
+        Choco-Install -PackageName mingw -ArgumentList "--version","10.2.0","--allow-downgrade"
+    - name: Install staticcheck
+      if: matrix.platform != 'windows-latest'
+      run: go install honnef.co/go/tools/cmd/staticcheck@latest
+      shell: bash
+    - name: Update PATH
+      run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+      shell: bash
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - name: Fmt
+      if: matrix.os != 'windows-latest'
+      run: "diff <(gofmt -d .) <(printf '')"
+      shell: bash
+    - name: Staticcheck
+      if: matrix.os != 'windows-latest'
+      run: staticcheck ./...
+    - name: Test
+      run: go test -race ./libsass

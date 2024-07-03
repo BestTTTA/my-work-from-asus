@@ -1,0 +1,11 @@
+docker run -d -p 27017:27017 --name mongo \
+	-e MONGO_INITDB_ROOT_USERNAME=batttrack \
+	-e MONGO_INITDB_ROOT_PASSWORD=batttrack123456 \
+	mongo
+
+docker run --name batttrackApi \
+    -e POSTGRES_PASSWORD=batttrackpassword \
+    -e POSTGRES_USER=batttrack \
+    -e POSTGRES_DB=batttrackdb \
+    -p 5555:5432 \
+    -d postgres

@@ -1,0 +1,1 @@
+GCP_PROJECT_ID = e-commerce-425403

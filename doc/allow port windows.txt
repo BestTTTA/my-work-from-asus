@@ -1,0 +1,31 @@
+
+To allow the OTA port (8266) through the Windows firewall, you can follow these steps:
+
+Allow Port 8266 in Windows Firewall
+Open Windows Firewall with Advanced Security:
+
+Press Win + R, type wf.msc, and press Enter.
+Create a New Inbound Rule:
+
+In the left-hand pane, click on Inbound Rules.
+In the right-hand pane, click on New Rule....
+Select Port:
+
+Choose Port and click Next.
+Specify Port and Protocol:
+
+Select TCP.
+In the Specific local ports field, enter 8266.
+Click Next.
+Allow the Connection:
+
+Select Allow the connection and click Next.
+Specify When the Rule Applies:
+
+Select all three profiles: Domain, Private, and Public.
+Click Next.
+Name the Rule:
+
+Give the rule a name, such as Arduino OTA.
+Optionally, provide a description.
+Click Finish.

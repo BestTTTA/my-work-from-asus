@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Js practice</title>
+    <script src="/js/myScript_insideFolder.js"></script>
+    <script src="myScript1.js"></script>
+    <script src="myScripts2.js"></script>
+    <script>
+        function myFuntion() {
+            document.getElementById("demo").innerHTML = "This is function inside html";
+        }
+        function changefontSize() {
+            document.getElementById("demo").style.fontSize = "40px";
+        }
+        function hideContent() {
+            document.getElementById("demo").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <p id="demo">A Paragraph.</p>
+
+    <button type="button" onclick="changefontSize()">change Size</button> -->
+    <!-- <button type="button" onclick="hideContent()">Hide</button>
+    <script>
+
+    </script>
+
+    <!-- <script>
+        let text = "";
+
+        for (let i = 1; i < 11; i++) {
+            text += "The number is " + i + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+    </script> -->
+
+    <!-- <p id="parameter">Parameter value</p>
+
+
+    <script>
+        document.write(5 + 6)
+    </script>
+    <script>
+        window.alert(5 + 6)
+    </script>
+    <script>
+        console.log(5 + 6)
+    </script>
+
+    <button type="button" onclick="myFuntion()">Try myFuntion</button>
+    <button type="button" onclick="myS()">Try myS</button>
+    <button type="button" onclick="myB()">Try myB</button>
+    <button type="button" onclick="myFunction1()">Try myFunction1</button>
+    <button type="button" onclick="myFunction2()">Try myFunction2</button>
+    <button type="button" onclick="window.print()">Print Screen</button>
+    <button type="button" onclick="parameterFuntion(2,3)">parameterFunction</button> -->
+
+
+
+    <!-- <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo").innerHTML = person.fullName();
+    </script> -->
+
+</body>
+
+</html>

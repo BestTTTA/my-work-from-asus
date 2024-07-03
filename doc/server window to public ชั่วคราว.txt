@@ -1,0 +1,9 @@
+
+
+npm install -g localtunnel
+
+lt --port 5555
+
+use ip to public ipv4
+
+"(Invoke-RestMethod api.ipify.org).ToString()" => for ipv4

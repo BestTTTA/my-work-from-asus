@@ -1,0 +1,2 @@
+bst12@TTTA MINGW64 ~
+$ curl -XPOST 'http://119.59.103.144:8086/api/v2/query?org=TTTA'   -H 'Authorization: Token WpvK5OCW4Nxdhr69aeKpaqOiq_Qs1w7-7nJHpV50cQ7mVvuV6KEciyynxtudqZo7fO0DaxoCN8RhA2USk6jRtw=='   -H 'Content-Type: application/vnd.flux'   --data 'from(bucket: "Energy-TTTA") |> range(start: -1d) |> filter(fn: (r) => r["_measurement"] == "loadALL") |> filter(fn: (r) => r["_field"] == "Watts") |> aggregateWindow(every: 15m, fn: mean, createEmpty: false) |> yield(name: "mean")'

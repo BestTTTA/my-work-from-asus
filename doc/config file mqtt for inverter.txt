@@ -1,0 +1,112 @@
+nano /home/homeassistant/.homeassistant/configuration.yaml
+http://192.168.1.144/ => esp8266 on battery room
+
+mqtt:
+  sensor:
+    - name: "Grid Voltage"
+      state_topic: "sensor/esp8266/grid_voltage"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Grid Frequency"
+      state_topic: "sensor/esp8266/grid_frequency"
+      unit_of_measurement: "Hz"
+      value_template: "{{ value_json.value }}"
+
+    - name: "AC Output Voltage"
+      state_topic: "sensor/esp8266/ac_output_voltage"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "AC Output Frequency"
+      state_topic: "sensor/esp8266/ac_output_frequency"
+      unit_of_measurement: "Hz"
+      value_template: "{{ value_json.value }}"
+
+    - name: "AC Output Apparent Power"
+      state_topic: "sensor/esp8266/ac_output_apparent_power"
+      unit_of_measurement: "VA"
+      value_template: "{{ value_json.value }}"
+
+    - name: "AC Output Active Power"
+      state_topic: "sensor/esp8266/ac_output_active_power"
+      unit_of_measurement: "W"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Output Load Percent"
+      state_topic: "sensor/esp8266/output_load_percent"
+      unit_of_measurement: "%"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Bus Voltage"
+      state_topic: "sensor/esp8266/bus_voltage"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Voltage"
+      state_topic: "sensor/esp8266/battery_voltage"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Charging Current"
+      state_topic: "sensor/esp8266/battery_charging_current"
+      unit_of_measurement: "A"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Capacity"
+      state_topic: "sensor/esp8266/battery_capacity"
+      unit_of_measurement: "%"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Inverter Heat Sink Temperature"
+      state_topic: "sensor/esp8266/inverter_heat_sink_temperature"
+      unit_of_measurement: "°C"
+      value_template: "{{ value_json.value }}"
+
+    - name: "PV Input Current for Battery"
+      state_topic: "sensor/esp8266/pv_input_current_for_battery"
+      unit_of_measurement: "A"
+      value_template: "{{ value_json.value }}"
+
+    - name: "PV Input Voltage 1"
+      state_topic: "sensor/esp8266/pv_input_voltage_1"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Voltage from SCC"
+      state_topic: "sensor/esp8266/battery_voltage_from_scc"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Discharge Current"
+      state_topic: "sensor/esp8266/battery_discharge_current"
+      unit_of_measurement: "A"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Device Status"
+      state_topic: "sensor/esp8266/device_status"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Battery Voltage Offset"
+      state_topic: "sensor/esp8266/battery_voltage_offset"
+      unit_of_measurement: "V"
+      value_template: "{{ value_json.value }}"
+
+    - name: "EEPROM Version"
+      state_topic: "sensor/esp8266/eeprom_version"
+      value_template: "{{ value_json.value }}"
+
+    - name: "PV Charging Power"
+      state_topic: "sensor/esp8266/pv_charging_power"
+      unit_of_measurement: "W"
+      value_template: "{{ value_json.value }}"
+
+    - name: "Device Status 2"
+      state_topic: "sensor/esp8266/device_status_2"
+      value_template: "{{ value_json.value }}"
+switch:
+    name: "Inverter Buzzer"
+    command_topic: "sensor/esp8266/buzzer"
+    state_topic: "sensor/esp8266/buzzer/state"
+    payload_on: "ON"
+    payload_off: "OFF"

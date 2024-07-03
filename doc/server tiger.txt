@@ -1,0 +1,20 @@
+server tiger
+CLOUD VPS LINUX 1
+
+Main IP: 119.59.103.144
+
+Shell SSH
+
+IP Address : 119.59.103.144
+Username : root
+Password : 3xo5]}6'UFhE
+-----------------------------
+CLOUD VPS LINUX 4
+
+Main IP: 119.59.102.68
+
+Shell SSH
+
+IP Address : 119.59.102.68
+Username : root
+Password : >6)b~75<4VhK

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    {{range $key, $value := .providers}}
+    <p><a href="/auth?provider=google">Log in with {{$value}}</a></p>
+    {{end}}
+</body>
+</html>

@@ -1,0 +1,32 @@
+config 
+
+
+_____________________
+
+server {
+      
+        server_name apilatlng.thetigerteamacademy.net;
+        client_max_body_size 1000M;
+        send_timeout 2;
+        http2_max_field_size 64k;
+        http2_max_header_size 512k;
+
+        location / {
+                proxy_pass "http://127.0.0.1:6060";
+        }
+
+}
+
+_______________________-
+
+
+ 119.59.102.68
+
+docker run -d \
+  --name ecommercedb \
+  -e POSTGRES_USER=ecommerceuser \
+  -e POSTGRES_PASSWORD=ecommercepassword \
+  -e POSTGRES_DB=ecommercedb \
+  -p 5544:5432 \
+  postgres
+
